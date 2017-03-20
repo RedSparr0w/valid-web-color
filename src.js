@@ -1,17 +1,11 @@
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = validWebColor;
-var shortHexPat = /^#([a-f\d])([a-f\d])([a-f\d])$/i;
-var hexPat = /^#([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i;
-var rgbPat = /^rgb\([0-2]?[0-5]?[0-5],\s?[0-2]?[0-5]?[0-5],\s?[0-2]?[0-5]?[0-5]\)$/i;
-var rgbaPat = /^rgba\([0-2]?[0-5]?[0-5],\s?[0-2]?[0-5]?[0-5],\s?[0-2]?[0-5]?[0-5],\s?\.?[0-9]+\)$/i; // eslint-disable-line max-len
-var hslPat = /^hsl\([0-3]?[0-5]?[0-9],\s?[0-1]?[0-9]?[0-9]%,\s?[0-1]?[0-9]?[0-9]%\)$/i;
-var hslaPat = /^hsla\([0-3]?[0-5]?[0-9],\s?[0-1]?[0-9]?[0-9]%,\s?[0-1]?[0-9]?[0-9]%,\s?\.?[0-9]+\)$/i; // eslint-disable-line max-len
-var regexArr = [shortHexPat, hexPat, rgbPat, rgbaPat, hslPat, hslaPat];
-var colorMap = {
+const shortHexPat = /^#([a-f\d])([a-f\d])([a-f\d])$/i;
+const hexPat = /^#([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i;
+const rgbPat = /^rgb\([0-2]?[0-5]?[0-5],\s?[0-2]?[0-5]?[0-5],\s?[0-2]?[0-5]?[0-5]\)$/i;
+const rgbaPat = /^rgba\([0-2]?[0-5]?[0-5],\s?[0-2]?[0-5]?[0-5],\s?[0-2]?[0-5]?[0-5],\s?\.?[0-9]+\)$/i; // eslint-disable-line max-len
+const hslPat = /^hsl\([0-3]?[0-5]?[0-9],\s?[0-1]?[0-9]?[0-9]%,\s?[0-1]?[0-9]?[0-9]%\)$/i;
+const hslaPat = /^hsla\([0-3]?[0-5]?[0-9],\s?[0-1]?[0-9]?[0-9]%,\s?[0-1]?[0-9]?[0-9]%,\s?\.?[0-9]+\)$/i; // eslint-disable-line max-len
+const regexArr = [shortHexPat, hexPat, rgbPat, rgbaPat, hslPat, hslaPat];
+const colorMap = {
   aliceblue: '#f0f8ff',
   antiquewhite: '#faebd7',
   aqua: '#00ffff',
@@ -152,13 +146,12 @@ var colorMap = {
   white: '#ffffff',
   whitesmoke: '#f5f5f5',
   yellow: '#ffff00',
-  yellowgreen: '#9acd32'
+  yellowgreen: '#9acd32',
 };
 
-function validWebColor(str) {
+
+export default function validWebColor(str) {
   if (typeof str !== 'string') return false; // if not a string it's invalid
   if (colorMap[str]) return true; // if exists in color map it's valid
-  return !!regexArr.find(function (regex) {
-    return regex.test(str);
-  });
+  return !!regexArr.find(regex => regex.test(str));
 }

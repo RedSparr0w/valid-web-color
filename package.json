@@ -2,7 +2,7 @@
   "name": "valid-web-color",
   "author": "https://github.com/sirrodgepodge",
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "utility function for checking that a string is a valid web color",
   "main": "index.js",
   "scripts": {
