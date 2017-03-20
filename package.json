@@ -1,0 +1,24 @@
+{
+  "name": "valid-web-color",
+  "author": "https://github.com/sirrodgepodge",
+  "license": "MIT",
+  "version": "1.0.0",
+  "description": "utility function for checking that a string is a valid web color",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sirrodgepodge/valid-web-color.git"
+  },
+  "keywords": [
+    "color",
+    "web",
+    "html5"
+  ],
+  "bugs": {
+    "url": "https://github.com/sirrodgepodge/valid-web-color/issues"
+  },
+  "homepage": "https://github.com/sirrodgepodge/valid-web-color#readme"
+}
